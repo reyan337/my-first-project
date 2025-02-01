@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Royal Hotel - Menu</title>
+    <style>
+        body {
+            font-family:'Courier New', Courier, monospace;
+            background-color: #0f36aa;
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            color: #c9d433;
+        
+        }
+        header {
+            background-color: #1150695d;
+            color: #b5dc27;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-family:'Times New Roman', Times, serif;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 45px;
+            justify-content: center;
+        }
+        .menu-item {
+            width: 220px;
+            height: 220px;
+            perspective: 1000px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
+        .menu-item-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        .menu-item:hover .menu-item-inner {
+            transform: rotateY(180deg);
+        }
+        .menu-item-front, .menu-item-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        .menu-item-front {
+            background-color: #f5f2f2f1;
+        }
+        .menu-item-front img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .menu-item-back {
+            background-color: rgba(29, 20, 20, 0.9);
+            color: #fff;
+            transform: rotateY(180deg);
+            padding: 15px;
+        }
+        .menu-item-back h3 {
+            margin: 0;
+            font-size: 1.2em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .menu-item-back p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        .menu-item-back .price {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+       
+            
+        .signing-section {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .signing-section h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .signing-section form {
+            max-width: 400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .signing-section input, .signing-section textarea {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: box-shadow 0.3s ease;
+        }
+        .signing-section input:focus, .signing-section textarea:focus {
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+        }
+        .signing-section button {
+            padding: 10px;
+            background-color: #18b743;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .signing-section button:hover {
+            background-color: #e6b800;
+        }
+        footer {
+    background-color: rgba(51, 51, 51, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 2px;
+    box-shadow: 0 -4px 8px rgba(31, 28, 28, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.social-icons {
+    display:flow-root;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #d73e3e;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #deb514;
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Grand Royal Hotel</h1>
+        <p>Since 1890 - A Legacy of Taste</p>
+    </header>
+
+    <div class="container">
+        <!-- Food Item 1 -->
+        <div class="menu-item">
+            <div class="menu-item-inner">
+                <div class="menu-item-front">
+                    <img src="/butter-chicken-ac2ff98.jpg" alt="Butter Chicken">
+                </div>
+                <div class="menu-item-back">
+                    <h3>Butter Chicken</h3>
+                    <p>Ingredients: Chicken, butter, tomatoes, cream, spices.</p>
+                    <p class="price">&#8377;350</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Food Item 2 -->
+        <div class="menu-item">
+            <div class="menu-item-inner">
+                <div class="menu-item-front">
+                    <img src="/biryani.jpg" alt="Biryani">
+                </div>
+                <div class="menu-item-back">
+                    <h3>Chicken Biryani</h3>
+                    <p>Ingredients: Rice, chicken, spices, herbs, yogurt.</p>
+                    <p class="price">&#8377;650</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Food Item 3 -->
+        <div class="menu-item">
+            <div class="menu-item-inner">
+                <div class="menu-item-front">
+                    <img src="/paneer tikka.webp" alt="Paneer Tikka">
+                </div>
+                <div class="menu-item-back">
+                    <h3>Paneer Tikka</h3>
+                    <p>Ingredients: Paneer, spices, yogurt, bell peppers.</p>
+                    <p class="price">&#8377;480</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Food Item 4 -->
+        <div class="menu-item">
+            <div class="menu-item-inner">
+                <div class="menu-item-front">
+                    <img src="gulab jamun.jpg" alt="Gulab Jamun">
+                </div>
+                <div class="menu-item-back">
+                    <h3>Gulab Jamun</h3>
+                    <p>Ingredients: Milk solids, sugar, flour, cardamom.</p>
+                    <p>per piece</p>
+                    <p class="price">&#8377;50</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Food Item 5 -->
+        <div class="menu-item">
+            <div class="menu-item-inner">
+                <div class="menu-item-front">
+                    <img src="/Tandoori-Chicken-20.jpg" alt="Tandoori Chicken">
+                </div>
+                <div class="menu-item-back">
+                    <h3>Grilled Chicken</h3>
+                    <p>Ingredients: Chicken, yogurt, spices, lemon.</p>
+                    <p>Half bird</p>
+                    <p class="price">&#8377;500</p>
+                    <p>Full Bird</p>
+                    <p class="price">&#8377;1000</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Food Item 6 -->
+        <div class="menu-item">
+            <div class="menu-item-inner">
+                <div class="menu-item-front">
+                    <img src="/samosa and chai.webp" alt="Samosa">
+                </div>
+                <div class="menu-item-back">
+                    <h3>Samosa</h3>
+                    <p>Ingredients: Potatoes, peas, spices, pastry.</p>
+                    <p class="price">&#8377;30</p>
+                    <p>+ chai complimentary</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Food Item 7 -->
+        <div class="menu-item">
+            <div class="menu-item-inner">
+                <div class="menu-item-front">
+                    <img src="/mandi.jpg" alt="Mandi">
+                </div>
+                <div class="menu-item-back">
+                    <h3>Mandi</h3>
+                    <p>Ingredients: Goat, spices, yogurt, onions.</p>
+                    <p class="price">&#8377;1500</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Food Item 8 -->
+        <div class="menu-item">
+            <div class="menu-item-inner">
+                <div class="menu-item-front">
+                    <img src="/naan.webp" alt="Naan">
+                </div>
+                <div class="menu-item-back">
+                    <h3>Naan</h3>
+                    <p>Ingredients: Flour, yeast, yogurt, butter.</p>
+                    <p>per Naan</p>
+                    <p class="price">&#8377;15</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signing Section -->
+    <div class="signing-section">
+        <h2>Leave Your Feedback</h2>
+        <form action="#" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="feedback" rows="4" placeholder="Your Feedback or Message"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 1890 Grand Royal Hotel. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>
